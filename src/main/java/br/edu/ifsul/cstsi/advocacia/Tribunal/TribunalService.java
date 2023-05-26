@@ -1,5 +1,6 @@
 package br.edu.ifsul.cstsi.advocacia.Tribunal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -8,6 +9,7 @@ import java.util.Optional;
 
 @Service
 public class TribunalService {
+    @Autowired
     private TribunalRepository rep;
 
     public List<Tribunal> getTribunais() {
