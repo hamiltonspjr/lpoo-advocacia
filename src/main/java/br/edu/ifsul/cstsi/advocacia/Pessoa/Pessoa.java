@@ -53,5 +53,21 @@ public class Pessoa {
     @OneToMany(mappedBy = "pessoaByCodpessoa")
     private Collection<Processo> processosByCodpessoa;
 
-
+    @Override
+    public String toString() {
+        return "\nPessoa{" +
+                "codpessoa=" + codpessoa +
+                ", nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", cep='" + cep + '\'' +
+                ", uf='" + uf + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", rg='" + rg + '\'' +
+                ", cpnj='" + cpnj + '\'' +
+                '}';
+    }
 }
