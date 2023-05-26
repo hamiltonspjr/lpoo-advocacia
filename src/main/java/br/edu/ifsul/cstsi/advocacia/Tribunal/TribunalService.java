@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,8 +25,8 @@ public class TribunalService {
         return null;
     }
     public List<Tribunal> getTribunalByDemoninacao(String denominacao) {
-        //return new ArrayList<>(rep.findByDenominacao(denominacao + "%"));
-        return null;
+        return new ArrayList<>(rep.findByDenominacao(denominacao + "%"));
+
     }
 
     public Tribunal insert(Tribunal tribunal) {

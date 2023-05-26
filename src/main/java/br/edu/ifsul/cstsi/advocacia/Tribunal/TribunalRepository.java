@@ -8,6 +8,6 @@ import java.util.List;
 
 
 public interface TribunalRepository extends JpaRepository<Tribunal, Integer> {
-    @Query(value = "Select t FROM Tribunal t where t.denominacao like ?1")
+    @Query(value = "SELECT t FROM Tribunal t where t.denominacao like ?1")
     List<Tribunal> findByDenominacao(String denominacao);
 }
