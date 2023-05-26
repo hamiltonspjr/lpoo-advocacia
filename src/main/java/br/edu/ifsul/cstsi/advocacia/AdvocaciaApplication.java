@@ -8,6 +8,7 @@ public class AdvocaciaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdvocaciaApplication.class, args);
+		HomeController.main();
 	}
 
 }

@@ -1,9 +1,7 @@
-package br.edu.ifsul.cstsi.lpoo_vendas_jpa_springboot_gradle;
+package br.edu.ifsul.cstsi.advocacia;
 
-import br.edu.ifsul.cstsi.lpoo_vendas_jpa_springboot_gradle.clientes.ClienteController;
-import br.edu.ifsul.cstsi.lpoo_vendas_jpa_springboot_gradle.pedidos.PedidoController;
-import br.edu.ifsul.cstsi.lpoo_vendas_jpa_springboot_gradle.pedidos.VendasController;
-import br.edu.ifsul.cstsi.lpoo_vendas_jpa_springboot_gradle.produtos.ProdutoController;
+import br.edu.ifsul.cstsi.advocacia.Tribunal.TribunalController;
+
 
 import java.util.Scanner;
 
@@ -24,7 +22,7 @@ public class HomeController {
             opcao = input.nextInt();
             input.nextLine();
             switch (opcao) {
-                case 1 -> VendasController.main(null);
+                case 1 -> TribunalController.main(null);
 
                 default -> {
                     if (opcao != 0) System.out.println("Opção inválida.");
