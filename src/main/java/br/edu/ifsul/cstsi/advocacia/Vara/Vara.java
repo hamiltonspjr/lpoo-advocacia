@@ -21,6 +21,9 @@ public class Vara {
     @Basic
     @Column(name = "descricao", nullable = false, length = 255)
     private String descricao;
+    @Basic
+    @Column(name = "nome", nullable = false, length = 255)
+    private String nome;
 //    @Basic
 //    @Column(name = "codtribunal", nullable = false)
 //    private Integer codtribunal;
@@ -30,4 +33,13 @@ public class Vara {
     @JoinColumn(name = "codtribunal", referencedColumnName = "codtribunal", nullable = false)
     private Tribunal tribunalByCodtribunal;
 
+    @Override
+    public String toString() {
+        return "\nVara{" +
+                "codvara=" + codvara +
+                ", descricao='" + descricao + '\'' +
+                ", nome='" + nome + '\'' +
+                ", tribunalByCodtribunal=" + tribunalByCodtribunal +
+                '}';
+    }
 }

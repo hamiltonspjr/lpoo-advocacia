@@ -132,6 +132,7 @@ public class TribunalController {
         input.nextLine();
         if (tribunal != null) {
             System.out.println(tribunal);
+
         } else {
             System.out.println("Tribunal não localizado.");
         }
