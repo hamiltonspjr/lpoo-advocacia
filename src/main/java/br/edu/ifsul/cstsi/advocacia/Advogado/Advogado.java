@@ -37,5 +37,16 @@ public class Advogado {
     @OneToMany(mappedBy = "advogadoByCodadvogado")
     private Collection<Assume> assumesByCodadvogado;
 
-
+    @Override
+    public String toString() {
+        return "\nAdvogado{" +
+                "codadvogado=" + codadvogado +
+                ", oab='" + oab + '\'' +
+                ", nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cep='" + cep + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
