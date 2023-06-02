@@ -27,7 +27,7 @@ public class Custa {
     @Column(name = "descricao", nullable = false, length = 255)
     private String descricao;
     @Basic
-    @Column(name = "valor", nullable = false, precision = 2)
+    @Column(name = "valor", nullable = false)
     private BigDecimal valor;
 //    @Basic
 //    @Column(name = "codprocesso", nullable = false)

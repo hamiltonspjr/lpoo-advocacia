@@ -1,11 +1,12 @@
 package br.edu.ifsul.cstsi.advocacia.Custa;
 
+import br.edu.ifsul.cstsi.advocacia.Processo.Processo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,12 +27,12 @@ public class CustaService {
         return null;
     }
 
-    public List<Custa> getCustaByData(Date data) {
+    public List<Custa> getCustaByData(LocalDate data) {
         return new ArrayList<>(rep.findByData(data));
     }
 
-    public List<Custa> getCustaByProcesso(Integer codProcesso) {
-        return new ArrayList<>(rep.findByCodProcesso(codProcesso));
+    public List<Custa> getCustaByProcesso(Processo processo) {
+        return new ArrayList<>(rep.findByCodProcesso(processo));
     }
 
     public Custa insert(Custa custa) {
@@ -47,7 +48,6 @@ public class CustaService {
             db.setData(custa.getData());
             db.setDescricao(custa.getDescricao());
             db.setValor(custa.getValor());
-            db.setProcessoByCodprocesso(custa.getProcessoByCodprocesso());
             rep.save(db);
             return db;
         } else {

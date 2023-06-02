@@ -4,6 +4,7 @@ import br.edu.ifsul.cstsi.advocacia.Advogado.AdvogadoService;
 import br.edu.ifsul.cstsi.advocacia.Assume.Assume;
 import br.edu.ifsul.cstsi.advocacia.Assume.AssumeService;
 import br.edu.ifsul.cstsi.advocacia.Custa.Custa;
+import br.edu.ifsul.cstsi.advocacia.Custa.CustaService;
 import br.edu.ifsul.cstsi.advocacia.Pessoa.Pessoa;
 import br.edu.ifsul.cstsi.advocacia.Pessoa.PessoaService;
 import br.edu.ifsul.cstsi.advocacia.Vara.Vara;
@@ -27,12 +28,14 @@ public class ProcessoController {
     private static VaraService varaService;
     private static AdvogadoService advogadoService;
     private static AssumeService assumeService;
-    public ProcessoController(ProcessoService processoService, PessoaService pessoaService, VaraService varaService, AssumeService assumeService, AdvogadoService advogadoService) {
+    private static CustaService custaService;
+    public ProcessoController(ProcessoService processoService, PessoaService pessoaService, VaraService varaService, AssumeService assumeService, AdvogadoService advogadoService, CustaService custaService) {
         ProcessoController.processoService = processoService;
         ProcessoController.varaService = varaService;
         ProcessoController.assumeService = assumeService;
         ProcessoController.advogadoService = advogadoService;
         ProcessoController.pessoaService = pessoaService;
+        ProcessoController.custaService = custaService;
     }
 
     public static void main(String[] args) {
@@ -113,6 +116,7 @@ public class ProcessoController {
         System.out.println("\nDigite o valor do custo: ");
         custo.setValor(input.nextBigDecimal());
         custo.setProcessoByCodprocesso(processoCadastrado);
+        custaService.insert(custo);
         System.out.println("Processo cadastrado no sistema");
     }
     private static void atualizar() {
