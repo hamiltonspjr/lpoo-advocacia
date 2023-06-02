@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class Audiencia {
     private Integer codaudiencia;
     @Basic
     @Column(name = "data", nullable = false)
-    private Date data;
+    private LocalDate data;
     @Basic
     @Column(name = "parecer", nullable = false, length = 255)
     private String parecer;
@@ -29,5 +31,13 @@ public class Audiencia {
     @JoinColumn(name = "codprocesso", referencedColumnName = "codprocesso", nullable = false)
     private Processo processoByCodprocesso;
 
-
+    @Override
+    public String toString() {
+        return "\nAudiencia{" +
+                "codaudiencia=" + codaudiencia +
+                ", data=" + data +
+                ", parecer='" + parecer + '\'' +
+                ", processoByCodprocesso=" + processoByCodprocesso +
+                '}';
+    }
 }

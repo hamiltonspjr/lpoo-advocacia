@@ -2,6 +2,7 @@ package br.edu.ifsul.cstsi.advocacia;
 
 import br.edu.ifsul.cstsi.advocacia.Advogado.AdvogadoController;
 import br.edu.ifsul.cstsi.advocacia.Pessoa.PessoaController;
+import br.edu.ifsul.cstsi.advocacia.Processo.ProcessoController;
 import br.edu.ifsul.cstsi.advocacia.Tribunal.TribunalController;
 import br.edu.ifsul.cstsi.advocacia.Vara.VaraController;
 
@@ -24,6 +25,7 @@ public class HomeController {
                         2. Vara
                         3. Pessoa
                         4. Advogado
+                        5. Processo
                         Opção (Zero p/sair):\s""");
             opcao = input.nextInt();
             input.nextLine();
@@ -32,6 +34,7 @@ public class HomeController {
                 case 2 -> VaraController.main(null);
                 case 3 -> PessoaController.main(null);
                 case 4 -> AdvogadoController.main(null);
+                case 5 -> ProcessoController.main(null);
                 default -> {
                     if (opcao != 0) System.out.println("Opção inválida.");
                 }

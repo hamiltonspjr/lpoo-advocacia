@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collection;
 
 @Data
@@ -27,10 +28,10 @@ public class Processo {
     private String numero;
     @Basic
     @Column(name = "abertura", nullable = false)
-    private Date abertura;
+    private LocalDate abertura;
     @Basic
     @Column(name = "conclusao", nullable = false)
-    private Date conclusao;
+    private LocalDate conclusao;
     @Basic
     @Column(name = "descricao", nullable = false, length = 255)
     private String descricao;
@@ -53,8 +54,25 @@ public class Processo {
     @JoinColumn(name = "codpessoa", referencedColumnName = "codpessoa", nullable = false)
     private Pessoa pessoaByCodpessoa;
     @ManyToOne
+    @JoinColumn(name = "codReu", referencedColumnName = "codpessoa", nullable = false)
+    private Pessoa reuByCodpessoa;
+
+    @ManyToOne
     @JoinColumn(name = "codvara", referencedColumnName = "codvara", nullable = false)
     private Vara varaByCodvara;
 
-
+    @Override
+    public String toString() {
+        return "\nProcesso{" +
+                "codprocesso=" + codprocesso +
+                ", numero='" + numero + '\'' +
+                ", abertura=" + abertura +
+                ", conclusao=" + conclusao +
+                ", descricao='" + descricao + '\'' +
+                ", situacao='" + situacao + '\'' +
+                ", pessoaByCodpessoa=" + pessoaByCodpessoa +
+                ", reuByCodpessoa=" + reuByCodpessoa +
+                ", varaByCodvara=" + varaByCodvara +
+                '}';
+    }
 }

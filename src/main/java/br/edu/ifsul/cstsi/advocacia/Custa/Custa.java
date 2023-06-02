@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +22,7 @@ public class Custa {
     private Integer codcusta;
     @Basic
     @Column(name = "data", nullable = false)
-    private Date data;
+    private LocalDate data;
     @Basic
     @Column(name = "descricao", nullable = false, length = 255)
     private String descricao;
@@ -34,5 +36,14 @@ public class Custa {
     @JoinColumn(name = "codprocesso", referencedColumnName = "codprocesso", nullable = false)
     private Processo processoByCodprocesso;
 
-
+    @Override
+    public String toString() {
+        return "\nCusta{" +
+                "codcusta=" + codcusta +
+                ", data=" + data +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                ", processoByCodprocesso=" + processoByCodprocesso +
+                '}';
+    }
 }

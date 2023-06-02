@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,10 +21,10 @@ public class Assume {
     private Integer codassume;
     @Basic
     @Column(name = "dataInicio", nullable = false)
-    private Date dataInicio;
+    private LocalDate dataInicio;
     @Basic
     @Column(name = "dataFinal", nullable = false)
-    private Date dataFinal;
+    private LocalDate dataFinal;
     //@Basic
     //@Column(name = "codadvogado", nullable = false)
     //private Integer codadvogado;
@@ -36,5 +38,14 @@ public class Assume {
     @JoinColumn(name = "codprocesso", referencedColumnName = "codprocesso", nullable = false)
     private Processo processoByCodprocesso;
 
-
+    @Override
+    public String toString() {
+        return "\nAssume{" +
+                "codassume=" + codassume +
+                ", dataInicio=" + dataInicio +
+                ", dataFinal=" + dataFinal +
+                ", advogadoByCodadvogado=" + advogadoByCodadvogado +
+                ", processoByCodprocesso=" + processoByCodprocesso +
+                '}';
+    }
 }
