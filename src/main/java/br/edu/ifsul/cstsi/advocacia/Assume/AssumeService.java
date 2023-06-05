@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,10 +27,10 @@ public class AssumeService {
         return null;
     }
 
-    public List<Assume> getAssumeByDataInicio(Date data) {
+    public List<Assume> getAssumeByDataInicio(LocalDate data) {
         return new ArrayList<>(rep.findByDataInicio(data));
     }
-    public List<Assume> getAssumeByDataFinal(Date data) {
+    public List<Assume> getAssumeByDataFinal(LocalDate data) {
         return new ArrayList<>(rep.findByDataFinal(data));
     }
     public Assume insert(Assume assume) {
