@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +26,7 @@ public class AudienciaService {
         return null;
     }
 
-    public List<Audiencia> getAudienciasByDate(Date date) {
+    public List<Audiencia> getAudienciasByDate(LocalDate date) {
         return new ArrayList<>(rep.findByData(date));
     }
 
