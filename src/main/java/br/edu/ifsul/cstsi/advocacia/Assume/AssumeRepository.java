@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
-public interface AssumeRepository extends JpaRepository<Assume, Integer> {
+public interface AssumeRepository extends JpaRepository<Assume, Integer>{
     @Query(value = "SELECT a FROM Assume a where a.dataInicio = ?1")
     List<Assume> findByDataInicio(LocalDate data);
 
